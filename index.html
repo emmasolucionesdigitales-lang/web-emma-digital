@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emma Soluciones Digitales · Apps para tu negocio</title>
+<meta name="description" content="Desarrollamos apps a medida para distribuidoras, soderías y negocios. Sistema de reparto, gestión financiera y más.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a12;
+    --bg2: #0f0f1e;
+    --bg3: #151525;
+    --purple: #7c3aed;
+    --violet: #a855f7;
+    --pink: #ec4899;
+    --glow: rgba(124,58,237,0.35);
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --border: rgba(124,58,237,0.2);
+    --wa: #25d366;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+  body::after { content:''; position:fixed; inset:0; background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events:none; z-index:9999; opacity:0.3; }
+
+  /* NAV */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:14px 40px; background:rgba(10,10,18,0.85); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); }
+  .logo-nav { display:flex; align-items:center; gap:10px; }
+  .logo-nav img { width:36px; height:36px; border-radius:10px; }
+  .logo-text { font-family:'Syne',sans-serif; font-size:18px; font-weight:800; color:white; }
+  .logo-text span { color:var(--violet); }
+  .nav-cta { background:linear-gradient(135deg,var(--purple),var(--violet)); color:white; padding:10px 22px; border-radius:50px; font-size:14px; font-weight:600; text-decoration:none; transition:all 0.2s; }
+  .nav-cta:hover { opacity:0.85; transform:translateY(-1px); }
+
+  /* HERO */
+  .hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:120px 32px 80px; position:relative; overflow:hidden; }
+  .blob { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.18; pointer-events:none; }
+  .blob1 { width:500px; height:500px; background:var(--purple); top:-100px; left:-150px; animation:drift1 10s ease-in-out infinite; }
+  .blob2 { width:400px; height:400px; background:var(--pink); bottom:-100px; right:-100px; animation:drift2 12s ease-in-out infinite; }
+  .blob3 { width:300px; height:300px; background:#06b6d4; top:40%; left:50%; transform:translate(-50%,-50%); animation:drift3 8s ease-in-out infinite; }
+  @keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,20px)} }
+  @keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-20px,-30px)} }
+  @keyframes drift3 { 0%,100%{transform:translate(-50%,-50%)} 50%{transform:translate(-45%,-55%)} }
+
+  .hero-inner { position:relative; z-index:2; }
+  .hero-logo { width:90px; height:90px; border-radius:24px; margin:0 auto 24px; display:block; box-shadow:0 0 40px rgba(124,58,237,0.4); }
+  .hero-chip { display:inline-flex; align-items:center; gap:8px; background:rgba(124,58,237,0.15); border:1px solid rgba(124,58,237,0.4); color:var(--violet); padding:8px 18px; border-radius:50px; font-size:13px; font-weight:500; margin-bottom:32px; }
+  .hero h1 { font-family:'Syne',sans-serif; font-size:clamp(40px,7vw,84px); font-weight:800; line-height:1.0; color:white; margin-bottom:24px; }
+  .hero h1 .grad { background:linear-gradient(135deg,var(--violet),var(--pink)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .hero p { font-size:18px; color:var(--muted); line-height:1.7; max-width:560px; margin:0 auto 44px; font-weight:300; }
+  .hero-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn-glow { background:linear-gradient(135deg,var(--purple),var(--violet)); color:white; padding:16px 36px; border-radius:50px; font-size:16px; font-weight:600; text-decoration:none; transition:all 0.3s; box-shadow:0 0 40px var(--glow); }
+  .btn-glow:hover { transform:translateY(-2px); box-shadow:0 0 60px var(--glow); }
+  .btn-ghost { background:transparent; color:var(--text); padding:16px 36px; border-radius:50px; font-size:16px; font-weight:500; text-decoration:none; border:1px solid rgba(255,255,255,0.15); transition:all 0.2s; }
+  .btn-ghost:hover { border-color:rgba(255,255,255,0.35); background:rgba(255,255,255,0.05); }
+
+  /* SECTION BASE */
+  .section { padding:80px 40px; max-width:1100px; margin:0 auto; }
+  .section-chip { display:inline-block; background:rgba(124,58,237,0.15); border:1px solid rgba(124,58,237,0.3); color:var(--violet); padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:16px; }
+  .section-title { font-family:'Syne',sans-serif; font-size:clamp(28px,4vw,48px); font-weight:800; color:white; margin-bottom:16px; line-height:1.15; }
+  .section-sub { font-size:17px; color:var(--muted); line-height:1.7; max-width:500px; margin-bottom:56px; font-weight:300; }
+
+  /* APPS */
+  .apps-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
+  .app-card { background:var(--bg3); border:1px solid var(--border); border-radius:24px; padding:36px 32px; transition:all 0.3s; position:relative; overflow:hidden; }
+  .app-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(124,58,237,0.05),transparent); opacity:0; transition:opacity 0.3s; }
+  .app-card:hover { border-color:rgba(124,58,237,0.5); transform:translateY(-4px); box-shadow:0 20px 60px rgba(124,58,237,0.15); }
+  .app-card:hover::before { opacity:1; }
+  .app-ico { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:20px; }
+  .ico-blue { background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3); }
+  .ico-purple { background:rgba(124,58,237,0.15); border:1px solid rgba(124,58,237,0.3); }
+  .ico-green { background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3); }
+  .app-name { font-family:'Syne',sans-serif; font-size:20px; font-weight:800; color:white; margin-bottom:10px; }
+  .app-desc { font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:20px; }
+  .app-tags { display:flex; flex-wrap:wrap; gap:6px; }
+  .app-tag { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--muted); padding:4px 10px; border-radius:20px; font-size:11px; font-weight:500; }
+  .app-precio { display:inline-block; margin-top:16px; background:linear-gradient(135deg,var(--purple),var(--violet)); color:white; padding:6px 16px; border-radius:20px; font-size:13px; font-weight:600; }
+
+  /* COMO FUNCIONA */
+  .pasos-bg { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:80px 40px; }
+  .pasos-inner { max-width:1100px; margin:0 auto; }
+  .pasos-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:32px; margin-top:56px; position:relative; }
+  .paso { background:var(--bg3); border:1px solid var(--border); border-radius:20px; padding:32px 28px; text-align:center; transition:all 0.3s; }
+  .paso:hover { border-color:rgba(124,58,237,0.5); transform:translateY(-4px); }
+  .paso-num { width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,var(--purple),var(--violet)); color:white; font-family:'Syne',sans-serif; font-size:20px; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
+  .paso-ico { font-size:32px; margin-bottom:12px; }
+  .paso-title { font-family:'Syne',sans-serif; font-size:17px; font-weight:800; color:white; margin-bottom:8px; }
+  .paso-desc { font-size:14px; color:var(--muted); line-height:1.6; }
+
+  /* DEMO */
+  .demo-section { padding:80px 40px; max-width:1100px; margin:0 auto; }
+  .demo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:48px; }
+  .demo-card { background:var(--bg3); border:1px solid var(--border); border-radius:20px; overflow:hidden; transition:all 0.3s; }
+  .demo-card:hover { border-color:rgba(124,58,237,0.4); transform:translateY(-4px); box-shadow:0 20px 60px rgba(124,58,237,0.1); }
+  .demo-screen { background:linear-gradient(135deg,var(--bg2),var(--bg3)); height:200px; display:flex; align-items:center; justify-content:center; font-size:48px; border-bottom:1px solid var(--border); }
+  .demo-info { padding:24px; }
+  .demo-title { font-family:'Syne',sans-serif; font-size:16px; font-weight:800; color:white; margin-bottom:6px; }
+  .demo-desc { font-size:13px; color:var(--muted); line-height:1.6; }
+
+  /* POR QUE */
+  .porque-section { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .porque-inner { max-width:1100px; margin:0 auto; padding:80px 40px; }
+  .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:32px; margin-top:56px; }
+  .feat-ico { font-size:32px; margin-bottom:14px; }
+  .feat-title { font-family:'Syne',sans-serif; font-size:17px; font-weight:800; color:white; margin-bottom:8px; }
+  .feat-desc { font-size:14px; color:var(--muted); line-height:1.6; }
+
+  /* FAQ */
+  .faq-section { padding:80px 40px; max-width:800px; margin:0 auto; }
+  .faq-item { background:var(--bg3); border:1px solid var(--border); border-radius:16px; margin-bottom:12px; overflow:hidden; transition:all 0.3s; }
+  .faq-item:hover { border-color:rgba(124,58,237,0.4); }
+  .faq-q { padding:24px 28px; font-family:'Syne',sans-serif; font-size:16px; font-weight:700; color:white; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .faq-q::after { content:'﹢'; font-size:22px; color:var(--violet); flex-shrink:0; }
+  .faq-item.open .faq-q::after { content:'－'; }
+  .faq-a { padding:0 28px 24px; font-size:14px; color:var(--muted); line-height:1.7; display:none; }
+  .faq-item.open .faq-a { display:block; }
+
+  /* CONTACTO */
+  .contacto-section { padding:80px 40px; max-width:700px; margin:0 auto; text-align:center; }
+  .contact-card { background:var(--bg3); border:1px solid var(--border); border-radius:32px; padding:56px 48px; position:relative; overflow:hidden; }
+  .contact-card::before { content:''; position:absolute; top:-80px; right:-80px; width:200px; height:200px; background:var(--purple); border-radius:50%; filter:blur(60px); opacity:0.2; }
+  .form-input { width:100%; padding:14px 18px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; font-family:'Inter',sans-serif; font-size:15px; color:var(--text); outline:none; transition:border-color 0.2s; margin-bottom:12px; }
+  .form-input:focus { border-color:var(--purple); }
+  .form-input::placeholder { color:var(--muted); }
+  textarea.form-input { resize:vertical; min-height:100px; }
+  select.form-input option { background:var(--bg3); }
+  .btn-wa-emma { width:100%; background:var(--wa); color:white; padding:18px; border-radius:50px; font-size:17px; font-weight:700; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:all 0.2s; margin-top:8px; }
+  .btn-wa-emma:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(37,211,102,0.4); }
+
+  /* FOOTER */
+  footer { background:var(--bg); border-top:1px solid var(--border); padding:48px 40px; text-align:center; }
+  .footer-logo { display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:12px; }
+  .footer-logo img { width:32px; height:32px; border-radius:8px; }
+  .footer-logo-text { font-family:'Syne',sans-serif; font-size:20px; font-weight:800; color:white; }
+  .footer-logo-text span { color:var(--violet); }
+  footer p { font-size:14px; color:var(--muted); margin-bottom:8px; }
+  footer a { color:var(--violet); text-decoration:none; }
+
+  .wa-float { position:fixed; bottom:24px; right:24px; z-index:998; background:var(--wa); color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; box-shadow:0 4px 20px rgba(37,211,102,0.5); text-decoration:none; }
+
+  @media(max-width:600px){ nav{padding:14px 20px;} .section{padding:60px 20px;} .contact-card{padding:36px 24px;} .pasos-bg{padding:60px 20px;} .faq-section{padding:60px 20px;} }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-nav">
+    <img src="data:image/png;base64,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" alt="Emma" />
+    <span class="logo-text">Emma <span>Digital</span></span>
+  </div>
+  <a href="#contacto" class="nav-cta">Contactar →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+  <div class="hero-inner">
+    <img src="data:image/png;base64,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" alt="Emma Soluciones Digitales" class="hero-logo" />
+    <div class="hero-chip">⚡ Apps para distribuidoras y negocios</div>
+    <h1>Tu negocio,<br><span class="grad">digitalizado</span></h1>
+    <p>Desarrollamos apps a medida para que gestiones tu reparto, finanzas y clientes desde el celular. Sin papeles, sin complicaciones.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-glow">💬 Hablar con nosotros</a>
+      <a href="#apps" class="btn-ghost">Ver soluciones →</a>
+    </div>
+  </div>
+</section>
+
+<!-- APPS -->
+<div class="section" id="apps">
+  <div class="section-chip">Nuestras soluciones</div>
+  <h2 class="section-title">Apps que hacen<br>crecer tu negocio</h2>
+  <p class="section-sub">Desarrollamos software a medida pensado para soderías, distribuidoras y pequeños negocios.</p>
+  <div class="apps-grid">
+    <div class="app-card">
+      <div class="app-ico ico-blue">🚚</div>
+      <div class="app-name">Sistema de Reparto</div>
+      <div class="app-desc">Gestioná tus repartos diarios, clientes, stock, cobros y envases desde el celular. Historial completo, sincronizado en la nube.</div>
+      <div class="app-tags">
+        <span class="app-tag">Clientes</span>
+        <span class="app-tag">Stock</span>
+        <span class="app-tag">Cobros</span>
+        <span class="app-tag">Firebase</span>
+        <span class="app-tag">PWA</span>
+      </div>
+      <div class="app-precio">💬 Consultá precio</div>
+    </div>
+    <div class="app-card">
+      <div class="app-ico ico-purple">💼</div>
+      <div class="app-name">Emma Control</div>
+      <div class="app-desc">Control financiero diario de tu negocio. Ingresos, egresos, gastos fijos, tarjetas y arqueo de caja. Todo en un solo lugar.</div>
+      <div class="app-tags">
+        <span class="app-tag">Finanzas</span>
+        <span class="app-tag">Arqueo</span>
+        <span class="app-tag">Gastos fijos</span>
+        <span class="app-tag">Reportes</span>
+      </div>
+      <div class="app-precio">💬 Consultá precio</div>
+    </div>
+    <div class="app-card">
+      <div class="app-ico ico-green">⚙️</div>
+      <div class="app-name">A medida</div>
+      <div class="app-desc">¿Necesitás algo específico? Desarrollamos la solución que tu negocio necesita. Presupuesto sin cargo.</div>
+      <div class="app-tags">
+        <span class="app-tag">Personalizado</span>
+        <span class="app-tag">Sin límites</span>
+        <span class="app-tag">Consulta gratis</span>
+      </div>
+      <div class="app-precio">🎁 Presupuesto gratis</div>
+    </div>
+  </div>
+</div>
+
+<!-- COMO FUNCIONA -->
+<div class="pasos-bg" id="como-funciona">
+  <div class="pasos-inner">
+    <div class="section-chip">¿Cómo funciona?</div>
+    <h2 class="section-title">Empezá en<br>3 pasos simples</h2>
+    <p style="color:var(--muted);font-size:17px;font-weight:300;max-width:480px;">Sin instalaciones complicadas, sin conocimientos técnicos. Tu negocio digital en minutos.</p>
+    <div class="pasos-grid">
+      <div class="paso">
+        <div class="paso-num">1</div>
+        <div class="paso-ico">💬</div>
+        <div class="paso-title">Nos contactás</div>
+        <div class="paso-desc">Escribinos por WhatsApp y nos contás de tu negocio. Te asesoramos sin cargo para encontrar la mejor solución.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">2</div>
+        <div class="paso-ico">⚙️</div>
+        <div class="paso-title">Configuramos tu app</div>
+        <div class="paso-desc">Cargamos tus clientes, productos y datos. La app queda lista y personalizada para tu negocio en pocas horas.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">3</div>
+        <div class="paso-ico">🚀</div>
+        <div class="paso-title">¡Empezás a usarla!</div>
+        <div class="paso-desc">Gestioná todo desde el celular. Soporte continuo y actualizaciones incluidas mientras seas cliente.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DEMO -->
+<div class="demo-section" id="demo">
+  <div class="section-chip">Demo</div>
+  <h2 class="section-title">Mirá cómo<br>se ve por dentro</h2>
+  <p style="color:var(--muted);font-size:17px;font-weight:300;max-width:480px;margin-bottom:0;">Interfaces simples, pensadas para usar desde el celular sin complicaciones.</p>
+  <div class="demo-grid">
+    <div class="demo-card">
+      <div class="demo-screen">🚚</div>
+      <div class="demo-info">
+        <div class="demo-title">Panel de repartos del día</div>
+        <div class="demo-desc">Ves todos tus clientes del día, qué pidieron, si pagaron y el estado del envase.</div>
+      </div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-screen">📦</div>
+      <div class="demo-info">
+        <div class="demo-title">Control de stock</div>
+        <div class="demo-desc">Stock disponible, envases prestados y movimientos del día en tiempo real.</div>
+      </div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-screen">💰</div>
+      <div class="demo-info">
+        <div class="demo-title">Arqueo de caja</div>
+        <div class="demo-desc">Ingresos, egresos y gastos del día. Cerrás la caja en segundos desde el celular.</div>
+      </div>
+    </div>
+  </div>
+  <p style="color:var(--muted);font-size:14px;margin-top:32px;text-align:center;">¿Querés ver una demo en vivo? <a href="#contacto" style="color:var(--violet);font-weight:600;">Escribinos →</a></p>
+</div>
+
+<!-- POR QUE -->
+<div class="porque-section">
+  <div class="porque-inner">
+    <div class="section-chip">¿Por qué elegirnos?</div>
+    <h2 class="section-title">Simple, rápido<br>y confiable</h2>
+    <div class="features">
+      <div class="feat">
+        <div class="feat-ico">📱</div>
+        <div class="feat-title">100% mobile</div>
+        <div class="feat-desc">Diseñadas para usar desde el celular, sin instalar nada. Funcionan como apps nativas.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">☁️</div>
+        <div class="feat-title">En la nube</div>
+        <div class="feat-desc">Tus datos siempre sincronizados y seguros. Accedé desde cualquier dispositivo.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">🛠️</div>
+        <div class="feat-title">Soporte continuo</div>
+        <div class="feat-desc">Actualizaciones y mejoras constantes. Reportás un problema y lo resolvemos rápido.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">💰</div>
+        <div class="feat-title">Precio justo</div>
+        <div class="feat-desc">Suscripción mensual accesible. Sin costos ocultos ni contratos largos.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section" id="faq">
+  <div style="text-align:center;margin-bottom:48px;">
+    <div class="section-chip">Preguntas frecuentes</div>
+    <h2 class="section-title">¿Tenés dudas?</h2>
+    <p style="color:var(--muted);font-size:17px;font-weight:300;">Las preguntas más comunes de nuestros clientes.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">¿Necesito instalar algo en mi celular?</div>
+    <div class="faq-a">No. Nuestras apps son PWA (Progressive Web App), lo que significa que funcionan desde el navegador de tu celular como si fueran apps nativas. Solo entrás al link y listo, sin descargas.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">¿Mis datos están seguros?</div>
+    <div class="faq-a">Sí. Todos los datos se guardan en Firebase (Google), una de las plataformas más seguras del mundo. Hacemos backups automáticos diarios para que nunca pierdas información.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">¿Funciona sin internet?</div>
+    <div class="faq-a">La app requiere conexión a internet para sincronizar los datos en la nube. Sin embargo, podés ver información ya cargada sin conexión. Recomendamos usarla con datos móviles o WiFi.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">¿Puedo usarla con varios repartidores?</div>
+    <div class="faq-a">Sí. Tenemos una versión multi-usuario donde el dueño puede crear cuentas para sus repartidores, asignarles sectores y ver el resumen de todos desde un panel central.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">¿Qué pasa si tengo un problema?</div>
+    <div class="faq-a">Nos escribís por WhatsApp y lo resolvemos rápido. Ofrecemos soporte continuo a todos nuestros clientes, incluyendo actualizaciones y mejoras periódicas sin costo adicional.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">¿Puedo probarla antes de pagar?</div>
+    <div class="faq-a">Sí. Te damos acceso a una demo para que la pruebes antes de decidir. Contactanos y coordinamos una prueba gratuita adaptada a tu tipo de negocio.</div>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<section class="contacto-section" id="contacto">
+  <div class="section-chip">Contacto</div>
+  <h2 class="section-title" style="margin-bottom:12px;">¿Te interesa?<br>Hablemos</h2>
+  <p style="color:var(--muted);font-size:16px;margin-bottom:40px;font-weight:300;">Contanos de tu negocio y te decimos cómo podemos ayudarte.</p>
+  <div class="contact-card">
+    <input class="form-input" type="text" id="e-nombre" placeholder="Tu nombre" />
+    <input class="form-input" type="tel" id="e-tel" placeholder="Tu WhatsApp" />
+    <input class="form-input" type="text" id="e-neg" placeholder="Nombre de tu negocio" />
+    <select class="form-input" id="e-app">
+      <option value="">¿Qué te interesa?</option>
+      <option>Sistema de Reparto</option>
+      <option>Emma Control (finanzas)</option>
+      <option>Ambas apps</option>
+      <option>Desarrollo a medida</option>
+      <option>Solo quiero información</option>
+    </select>
+    <textarea class="form-input" id="e-msg" placeholder="Contanos más sobre tu negocio..."></textarea>
+    <button class="btn-wa-emma" onclick="enviarWAEmma()">💬 Escribir por WhatsApp</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="data:image/png;base64,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" alt="Emma" />
+    <span class="footer-logo-text">Emma <span>Soluciones Digitales</span></span>
+  </div>
+  <p>Apps para distribuidoras y negocios · Tucumán, Argentina</p>
+  <p><a href="https://wa.me/543813399962">📱 3813399962</a></p>
+  <p style="margin-top:20px;font-size:12px;opacity:0.4;">© 2026 Emma Soluciones Digitales</p>
+</footer>
+
+<a href="https://wa.me/543813399962?text=Hola!%20Vi%20su%20web%20y%20me%20interesa%20saber%20m%C3%A1s" class="wa-float" target="_blank">💬</a>
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
+function enviarWAEmma(){
+  const nombre = document.getElementById('e-nombre').value.trim();
+  const tel = document.getElementById('e-tel').value.trim();
+  const neg = document.getElementById('e-neg').value.trim();
+  const app = document.getElementById('e-app').value;
+  const msg2 = document.getElementById('e-msg').value.trim();
+  if(!nombre||!app){alert('Completá al menos tu nombre y qué te interesa.');return;}
+  let msg = '⚡ *Consulta Emma Soluciones Digitales*\n\n';
+  msg += '👤 Nombre: ' + nombre + '\n';
+  if(tel) msg += '📱 WhatsApp: ' + tel + '\n';
+  if(neg) msg += '🏪 Negocio: ' + neg + '\n';
+  msg += '💡 Interés: ' + app + '\n';
+  if(msg2) msg += '📝 Mensaje: ' + msg2;
+  window.open('https://wa.me/543813399962?text=' + encodeURIComponent(msg), '_blank');
+}
+</script>
+</body>
+</html>
