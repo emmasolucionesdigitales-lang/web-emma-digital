@@ -306,6 +306,51 @@
       <div class="app-precio">🌐 Desde $100.000</div>
       <span class="ver-mas">👁 Ver cómo funciona →</span>
     </div>
+    <div class="app-card" onclick="abrirModal('modal-kiosco')">
+      <div class="app-ico" style="background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3);">🏪</div>
+      <div class="app-name">App para Kioscos</div>
+      <div class="app-desc">Gestioná tu kiosco desde el celular. Control de stock, caja diaria, productos más vendidos y fiados de clientes. Todo en un solo lugar.</div>
+      <div class="app-tags">
+        <span class="app-tag">Stock</span>
+        <span class="app-tag">Caja</span>
+        <span class="app-tag">Fiados</span>
+        <span class="app-tag">Productos</span>
+        <span class="app-tag">PWA</span>
+      </div>
+      <div class="app-precio">💬 Consultá precio</div>
+      <span class="ver-mas">👁 Ver cómo funciona →</span>
+    </div>
+
+    <div class="app-card" onclick="abrirModal('modal-polleria')">
+      <div class="app-ico" style="background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3);">🍗</div>
+      <div class="app-name">App para Pollerías</div>
+      <div class="app-desc">Tomá pedidos, gestioná turnos de cocción, controlá stock de pollo y llevá la caja del día. Ideal para pollerías y rotiserías.</div>
+      <div class="app-tags">
+        <span class="app-tag">Pedidos</span>
+        <span class="app-tag">Turnos</span>
+        <span class="app-tag">Stock</span>
+        <span class="app-tag">Caja</span>
+        <span class="app-tag">PWA</span>
+      </div>
+      <div class="app-precio">💬 Consultá precio</div>
+      <span class="ver-mas">👁 Ver cómo funciona →</span>
+    </div>
+
+    <div class="app-card" onclick="abrirModal('modal-reposteria')">
+      <div class="app-ico" style="background:rgba(236,72,153,0.15);border:1px solid rgba(236,72,153,0.3);">🧁</div>
+      <div class="app-name">App para Reposterías</div>
+      <div class="app-desc">Organizá tus pedidos de tortas y postres, gestioná fechas de entrega, ingredientes y clientes. Nunca más te olvidés un pedido.</div>
+      <div class="app-tags">
+        <span class="app-tag">Pedidos</span>
+        <span class="app-tag">Entregas</span>
+        <span class="app-tag">Ingredientes</span>
+        <span class="app-tag">Clientes</span>
+        <span class="app-tag">PWA</span>
+      </div>
+      <div class="app-precio">💬 Consultá precio</div>
+      <span class="ver-mas">👁 Ver cómo funciona →</span>
+    </div>
+
     <div class="app-card" onclick="abrirModal('modal-medida')">
       <div class="app-ico ico-green">⚙️</div>
       <div class="app-name">A medida</div>
@@ -782,6 +827,168 @@
       </div>
       <div class="modal-cta">
         <a href="https://wa.me/543813399962?text=Hola!%20Necesito%20un%20desarrollo%20a%20medida" target="_blank" class="modal-btn-wa">💬 Hablar de mi proyecto</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL KIOSCO -->
+<div class="modal-overlay" id="modal-kiosco" onclick="cerrarModal(event,'modal-kiosco')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('modal-kiosco').classList.remove('active')">✕</button>
+    <div class="modal-header">
+      <div class="modal-ico">🏪</div>
+      <div class="modal-title">App para Kioscos</div>
+      <div class="modal-subtitle">Gestioná tu kiosco desde el celular. Stock, caja, fiados y productos más vendidos en un solo lugar.</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-screen">
+        <div class="mock-bar">
+          <div class="mock-dot" style="background:#ff5f57"></div>
+          <div class="mock-dot" style="background:#febc2e"></div>
+          <div class="mock-dot" style="background:#28c840"></div>
+          <div class="mock-title">🏪 Mi Kiosco — Hoy</div>
+        </div>
+        <div class="mock-stat-row" style="margin-bottom:14px;">
+          <div class="mock-stat"><div class="mock-stat-val" style="color:#fbbf24;">$62.400</div><div class="mock-stat-lbl">Caja del día</div></div>
+          <div class="mock-stat"><div class="mock-stat-val" style="color:#4ade80;">148</div><div class="mock-stat-lbl">Productos</div></div>
+          <div class="mock-stat"><div class="mock-stat-val" style="color:#f87171;">$8.200</div><div class="mock-stat-lbl">Fiados</div></div>
+        </div>
+        <div class="mock-row">
+          <div class="mock-ava" style="background:rgba(251,191,36,0.2);">🥤</div>
+          <div class="mock-info"><div class="mock-name">Gaseosas 500ml</div><div class="mock-detail">Stock: 24 unidades · $850 c/u</div></div>
+          <span class="mock-badge badge-green">OK</span>
+        </div>
+        <div class="mock-row">
+          <div class="mock-ava" style="background:rgba(239,68,68,0.2);">🍫</div>
+          <div class="mock-info"><div class="mock-name">Alfajores</div><div class="mock-detail">Stock: 3 unidades · $650 c/u</div></div>
+          <span class="mock-badge badge-yellow">⚠️ Poco</span>
+        </div>
+        <div class="mock-row">
+          <div class="mock-ava" style="background:rgba(124,58,237,0.2);">👤</div>
+          <div class="mock-info"><div class="mock-name">Ramírez, Pablo — Fiado</div><div class="mock-detail">Debe desde el lunes</div></div>
+          <span class="mock-badge" style="background:rgba(239,68,68,0.2);color:#f87171;">$2.400</span>
+        </div>
+      </div>
+      <div class="modal-features">
+        <div class="modal-feat"><div class="modal-feat-ico">📦</div><div class="modal-feat-txt"><strong>Control de stock</strong>Alertas cuando un producto está por agotarse.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">💵</div><div class="modal-feat-txt"><strong>Caja diaria</strong>Registrá cada venta y cerrá el día fácil.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">📋</div><div class="modal-feat-txt"><strong>Fiados de clientes</strong>Llevá cuenta de quién te debe y cuánto.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">🏆</div><div class="modal-feat-txt"><strong>Más vendidos</strong>Sabé qué productos rotan más.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">📱</div><div class="modal-feat-txt"><strong>Sin instalar nada</strong>Funciona desde el navegador del celular.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">☁️</div><div class="modal-feat-txt"><strong>Datos en la nube</strong>Tus datos seguros y siempre disponibles.</div></div>
+      </div>
+      <div class="modal-cta">
+        <a href="https://wa.me/543813399962?text=Hola!%20Me%20interesa%20la%20App%20para%20Kioscos" target="_blank" class="modal-btn-wa">💬 Quiero esta app</a>
+        <a href="#contacto" class="modal-btn-ghost" onclick="document.getElementById('modal-kiosco').classList.remove('active')">📩 Contactar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL POLLERÍA -->
+<div class="modal-overlay" id="modal-polleria" onclick="cerrarModal(event,'modal-polleria')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('modal-polleria').classList.remove('active')">✕</button>
+    <div class="modal-header">
+      <div class="modal-ico">🍗</div>
+      <div class="modal-title">App para Pollerías</div>
+      <div class="modal-subtitle">Tomá pedidos, organizá turnos de cocción y llevá la caja del día. Ideal para pollerías y rotiserías.</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-screen">
+        <div class="mock-bar">
+          <div class="mock-dot" style="background:#ff5f57"></div>
+          <div class="mock-dot" style="background:#febc2e"></div>
+          <div class="mock-dot" style="background:#28c840"></div>
+          <div class="mock-title">🍗 Pollería — Pedidos del día</div>
+        </div>
+        <div class="mock-stat-row" style="margin-bottom:14px;">
+          <div class="mock-stat"><div class="mock-stat-val" style="color:#f87171;">8</div><div class="mock-stat-lbl">Pedidos hoy</div></div>
+          <div class="mock-stat"><div class="mock-stat-val" style="color:#fbbf24;">3</div><div class="mock-stat-lbl">En cocción</div></div>
+          <div class="mock-stat"><div class="mock-stat-val" style="color:#4ade80;">$94.000</div><div class="mock-stat-lbl">Recaudado</div></div>
+        </div>
+        <div class="mock-row">
+          <div class="mock-ava" style="background:rgba(239,68,68,0.2);">🍗</div>
+          <div class="mock-info"><div class="mock-name">Martínez — 2 pollos enteros</div><div class="mock-detail">Retira 12:30hs · Pagado</div></div>
+          <span class="mock-badge badge-green">✓ Listo</span>
+        </div>
+        <div class="mock-row">
+          <div class="mock-ava" style="background:rgba(251,191,36,0.2);">🔥</div>
+          <div class="mock-info"><div class="mock-name">González — 1 pollo + papas</div><div class="mock-detail">Retira 13:00hs · Señado</div></div>
+          <span class="mock-badge badge-yellow">🔥 Cocción</span>
+        </div>
+        <div class="mock-row">
+          <div class="mock-ava" style="background:rgba(59,130,246,0.2);">📋</div>
+          <div class="mock-info"><div class="mock-name">Pérez — 3 cuartos traseros</div><div class="mock-detail">Retira 14:00hs</div></div>
+          <span class="mock-badge badge-blue">⏳ Pendiente</span>
+        </div>
+      </div>
+      <div class="modal-features">
+        <div class="modal-feat"><div class="modal-feat-ico">📋</div><div class="modal-feat-txt"><strong>Gestión de pedidos</strong>Tomá pedidos con hora de retiro y seña.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">🔥</div><div class="modal-feat-txt"><strong>Turnos de cocción</strong>Organizá el horno para no perder pedidos.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">💵</div><div class="modal-feat-txt"><strong>Caja del día</strong>Registrá pagos, señas y cierres de caja.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">📦</div><div class="modal-feat-txt"><strong>Stock de insumos</strong>Controlá pollos, papas y otros ingredientes.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">👥</div><div class="modal-feat-txt"><strong>Clientes frecuentes</strong>Historial de pedidos por cliente.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">📱</div><div class="modal-feat-txt"><strong>Desde el celular</strong>Sin instalar nada, funciona en el navegador.</div></div>
+      </div>
+      <div class="modal-cta">
+        <a href="https://wa.me/543813399962?text=Hola!%20Me%20interesa%20la%20App%20para%20Pollerías" target="_blank" class="modal-btn-wa">💬 Quiero esta app</a>
+        <a href="#contacto" class="modal-btn-ghost" onclick="document.getElementById('modal-polleria').classList.remove('active')">📩 Contactar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL REPOSTERÍA -->
+<div class="modal-overlay" id="modal-reposteria" onclick="cerrarModal(event,'modal-reposteria')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('modal-reposteria').classList.remove('active')">✕</button>
+    <div class="modal-header">
+      <div class="modal-ico">🧁</div>
+      <div class="modal-title">App para Reposterías</div>
+      <div class="modal-subtitle">Organizá tus pedidos de tortas y postres, fechas de entrega y clientes. Nunca más te olvidés un pedido.</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-screen">
+        <div class="mock-bar">
+          <div class="mock-dot" style="background:#ff5f57"></div>
+          <div class="mock-dot" style="background:#febc2e"></div>
+          <div class="mock-dot" style="background:#28c840"></div>
+          <div class="mock-title">🧁 Repostería — Próximas entregas</div>
+        </div>
+        <div class="mock-stat-row" style="margin-bottom:14px;">
+          <div class="mock-stat"><div class="mock-stat-val" style="color:#f472b6;">5</div><div class="mock-stat-lbl">Esta semana</div></div>
+          <div class="mock-stat"><div class="mock-stat-val" style="color:#fbbf24;">2</div><div class="mock-stat-lbl">Esta semana</div></div>
+          <div class="mock-stat"><div class="mock-stat-val" style="color:#4ade80;">$187.000</div><div class="mock-stat-lbl">Cobrado</div></div>
+        </div>
+        <div class="mock-row">
+          <div class="mock-ava" style="background:rgba(236,72,153,0.2);">🎂</div>
+          <div class="mock-info"><div class="mock-name">Torta 3 pisos — Gómez</div><div class="mock-detail">Entrega: Sábado 10:00hs · Señado $5.000</div></div>
+          <span class="mock-badge badge-yellow">⏳ En proceso</span>
+        </div>
+        <div class="mock-row">
+          <div class="mock-ava" style="background:rgba(251,191,36,0.2);">🧁</div>
+          <div class="mock-info"><div class="mock-name">24 cupcakes — Fernández</div><div class="mock-detail">Entrega: Domingo 09:00hs · Pagado</div></div>
+          <span class="mock-badge badge-green">✓ Listo</span>
+        </div>
+        <div class="mock-row">
+          <div class="mock-ava" style="background:rgba(124,58,237,0.2);">🍰</div>
+          <div class="mock-info"><div class="mock-name">Cheesecake — López</div><div class="mock-detail">Entrega: Lunes 11:00hs</div></div>
+          <span class="mock-badge badge-blue">📋 Nuevo</span>
+        </div>
+      </div>
+      <div class="modal-features">
+        <div class="modal-feat"><div class="modal-feat-ico">📅</div><div class="modal-feat-txt"><strong>Agenda de pedidos</strong>Organizá entregas por fecha y hora.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">💰</div><div class="modal-feat-txt"><strong>Señas y pagos</strong>Registrá señas y saldos pendientes.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">🥚</div><div class="modal-feat-txt"><strong>Control de ingredientes</strong>Sabé si tenés todo para cada pedido.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">👥</div><div class="modal-feat-txt"><strong>Base de clientes</strong>Historial de pedidos por cliente.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">🔔</div><div class="modal-feat-txt"><strong>Recordatorios</strong>Nunca más te olvidés una entrega.</div></div>
+        <div class="modal-feat"><div class="modal-feat-ico">📱</div><div class="modal-feat-txt"><strong>Desde el celular</strong>Sin instalar nada, funciona en el navegador.</div></div>
+      </div>
+      <div class="modal-cta">
+        <a href="https://wa.me/543813399962?text=Hola!%20Me%20interesa%20la%20App%20para%20Reposterías" target="_blank" class="modal-btn-wa">💬 Quiero esta app</a>
+        <a href="#contacto" class="modal-btn-ghost" onclick="document.getElementById('modal-reposteria').classList.remove('active')">📩 Contactar</a>
       </div>
     </div>
   </div>
