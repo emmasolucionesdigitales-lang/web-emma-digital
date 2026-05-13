@@ -81,6 +81,14 @@
   .app-tags { display:flex; flex-wrap:wrap; gap:6px; }
   .app-tag { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--muted); padding:4px 10px; border-radius:20px; font-size:11px; font-weight:500; }
   .app-precio { display:inline-block; margin-top:16px; background:linear-gradient(135deg,var(--purple),var(--violet)); color:white; padding:6px 16px; border-radius:20px; font-size:13px; font-weight:600; }
+  .app-tiempo { display:inline-block; margin-top:6px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:var(--muted); padding:4px 12px; border-radius:20px; font-size:12px; font-weight:500; }
+  /* TABLA A MEDIDA */
+  .medida-tabla { width:100%; border-collapse:collapse; margin:20px 0; font-size:13px; }
+  .medida-tabla th { background:rgba(124,58,237,0.15); color:var(--violet); padding:10px 12px; text-align:left; font-weight:700; border-bottom:1px solid var(--border); }
+  .medida-tabla td { padding:10px 12px; color:var(--muted); border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:middle; }
+  .medida-tabla tr:last-child td { border-bottom:none; }
+  .medida-tabla .nivel { font-family:'Syne',sans-serif; font-size:13px; font-weight:800; color:white; }
+  .medida-tabla .precio-desde { color:white; font-weight:700; font-size:14px; }
 
   /* COMO FUNCIONA */
   .pasos-bg { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:80px 40px; }
@@ -277,6 +285,7 @@
         <span class="app-tag">PWA</span>
       </div>
       <div class="app-precio">💬 Consultá precio</div>
+      <div class="app-tiempo">⏱ Lista en 24-48 hs</div>
       <span class="ver-mas">👁 Ver cómo funciona →</span>
     </div>
     <div class="app-card" onclick="abrirModal('modal-control')">
@@ -290,6 +299,7 @@
         <span class="app-tag">Reportes</span>
       </div>
       <div class="app-precio">💬 Consultá precio</div>
+      <div class="app-tiempo">⏱ Lista en 24-48 hs</div>
       <span class="ver-mas">👁 Ver cómo funciona →</span>
     </div>
     <div class="app-card" onclick="abrirModal('modal-web')">
@@ -304,6 +314,7 @@
         <span class="app-tag">Rápida</span>
       </div>
       <div class="app-precio">🌐 Desde $100.000</div>
+      <div class="app-tiempo">⏱ Lista en 3-5 días</div>
       <span class="ver-mas">👁 Ver cómo funciona →</span>
     </div>
     <div class="app-card" onclick="abrirModal('modal-kiosco')">
@@ -317,7 +328,8 @@
         <span class="app-tag">Productos</span>
         <span class="app-tag">PWA</span>
       </div>
-      <div class="app-precio">💬 Consultá precio</div>
+      <div class="app-precio">Setup $25.000 · $20.000/mes</div>
+      <div class="app-tiempo">⏱ Lista en 2-4 días</div>
       <span class="ver-mas">👁 Ver cómo funciona →</span>
     </div>
 
@@ -332,7 +344,8 @@
         <span class="app-tag">Caja</span>
         <span class="app-tag">PWA</span>
       </div>
-      <div class="app-precio">💬 Consultá precio</div>
+      <div class="app-precio">Setup $25.000 · $20.000/mes</div>
+      <div class="app-tiempo">⏱ Lista en 2-4 días</div>
       <span class="ver-mas">👁 Ver cómo funciona →</span>
     </div>
 
@@ -347,7 +360,8 @@
         <span class="app-tag">Clientes</span>
         <span class="app-tag">PWA</span>
       </div>
-      <div class="app-precio">💬 Consultá precio</div>
+      <div class="app-precio">Setup $20.000 · $18.000/mes</div>
+      <div class="app-tiempo">⏱ Lista en 2-4 días</div>
       <span class="ver-mas">👁 Ver cómo funciona →</span>
     </div>
 
@@ -361,6 +375,7 @@
         <span class="app-tag">Consulta gratis</span>
       </div>
       <div class="app-precio">🎁 Presupuesto gratis</div>
+      <div class="app-tiempo">⏱ Según complejidad</div>
       <span class="ver-mas">👁 Ver más →</span>
     </div>
   </div>
@@ -807,16 +822,48 @@
       <div class="modal-subtitle">Si ninguna solución estándar te convence, la creamos desde cero para vos. Sin límites.</div>
     </div>
     <div class="modal-body">
-      <div class="modal-screen" style="text-align:center;padding:32px;">
-        <div style="font-size:48px;margin-bottom:16px;">🛠️</div>
-        <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:white;margin-bottom:8px;">¿Tenés una idea?</div>
-        <div style="font-size:14px;color:var(--muted);line-height:1.6;max-width:360px;margin:0 auto;">Contanos qué necesita tu negocio y nosotros lo desarrollamos. Desde apps simples hasta sistemas complejos.</div>
-        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px;">
-          <span class="mock-badge badge-blue" style="padding:6px 14px;font-size:12px;">App de turnos</span>
-          <span class="mock-badge badge-green" style="padding:6px 14px;font-size:12px;">Sistema de inventario</span>
-          <span class="mock-badge" style="background:rgba(236,72,153,0.2);color:#f472b6;padding:6px 14px;font-size:12px;">App para empleados</span>
-          <span class="mock-badge badge-blue" style="padding:6px 14px;font-size:12px;">Catálogo digital</span>
-          <span class="mock-badge badge-green" style="padding:6px 14px;font-size:12px;">Sistema de pedidos</span>
+      <div class="modal-screen" style="padding:20px 16px;">
+        <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:white;margin-bottom:4px;">💲 Precios de referencia</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:14px;">Orientativos · El presupuesto final es gratuito y sin compromiso.</div>
+        <table class="medida-tabla">
+          <thead>
+            <tr>
+              <th>Nivel</th>
+              <th>¿Qué incluye?</th>
+              <th>Setup</th>
+              <th>/mes</th>
+              <th>⏱ Entrega</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="nivel">🟢 Simple</span></td>
+              <td>1 a 3 funciones, 1 usuario (agenda, catálogo, fiados)</td>
+              <td><span class="precio-desde">$20.000</span></td>
+              <td>$12.000</td>
+              <td>2-5 días</td>
+            </tr>
+            <tr>
+              <td><span class="nivel">🟡 Estándar</span></td>
+              <td>Stock + caja + clientes + historial, 1-2 usuarios</td>
+              <td><span class="precio-desde">$35.000</span></td>
+              <td>$20.000</td>
+              <td>1-2 semanas</td>
+            </tr>
+            <tr>
+              <td><span class="nivel">🔴 Completo</span></td>
+              <td>Multi-usuario, roles, reportes, integración con otras apps</td>
+              <td><span class="precio-desde">$70.000</span></td>
+              <td>$35.000</td>
+              <td>2-4 semanas</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px;">
+          <span class="mock-badge badge-blue" style="padding:5px 12px;font-size:11px;">App de turnos</span>
+          <span class="mock-badge badge-green" style="padding:5px 12px;font-size:11px;">Sistema de inventario</span>
+          <span class="mock-badge" style="background:rgba(236,72,153,0.2);color:#f472b6;padding:5px 12px;font-size:11px;">App para empleados</span>
+          <span class="mock-badge badge-blue" style="padding:5px 12px;font-size:11px;">Catálogo digital</span>
         </div>
       </div>
       <div class="modal-features">
