@@ -170,7 +170,7 @@
   .precios-section { background: var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:80px 40px; }
   .precios-inner { max-width:1100px; margin:0 auto; }
   .precios-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px; margin-bottom:56px; }
-  .precio-card { background:var(--bg3); border:1px solid var(--border); border-radius:24px; padding:32px 24px; display:flex; flex-direction:column; gap:10px; transition:all 0.3s; position:relative; }
+  .precio-card { background:var(--bg3); border:1px solid var(--border); border-radius:24px; padding:32px 24px; display:flex; flex-direction:column; gap:10px; transition:all 0.3s; position:relative; min-width:0; overflow:hidden; }
   .precio-card:hover { border-color:rgba(124,58,237,0.5); transform:translateY(-4px); box-shadow:0 20px 60px rgba(124,58,237,0.15); }
   .precio-card.destacado { border-color:rgba(124,58,237,0.5); }
   .precio-badge { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,var(--purple),var(--violet)); color:white; padding:4px 16px; border-radius:50px; font-size:12px; font-weight:700; white-space:nowrap; }
@@ -179,9 +179,9 @@
   .precio-sub { font-size:13px; color:var(--muted); }
   .precio-setup { display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--muted); border-top:1px solid var(--border); padding-top:12px; }
   .precio-setup strong { color:var(--text); font-size:15px; }
-  .precio-mensual { font-family:'Syne',sans-serif; font-size:42px; font-weight:800; color:var(--text); line-height:1; }
-  .precio-mensual span { font-size:20px; font-weight:400; vertical-align:top; margin-top:8px; display:inline-block; }
-  .precio-mensual small { font-size:16px; font-weight:400; color:var(--muted); }
+  .precio-mensual { font-family:'Syne',sans-serif; font-size:clamp(26px,6vw,38px); font-weight:800; color:var(--text); line-height:1.1; overflow-wrap:break-word; word-break:break-word; }
+  .precio-mensual span { font-size:16px; font-weight:400; vertical-align:top; margin-top:6px; display:inline-block; }
+  .precio-mensual small { font-size:14px; font-weight:400; color:var(--muted); white-space:nowrap; }
   .precio-lista { list-style:none; display:flex; flex-direction:column; gap:6px; flex:1; }
   .precio-lista li { font-size:13px; color:var(--muted); padding-left:16px; position:relative; }
   .precio-lista li::before { content:"✓"; position:absolute; left:0; color:var(--violet-dark); font-weight:700; }
