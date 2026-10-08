@@ -1,0 +1,12 @@
+desktop.ini
+*.docx
+*.pptx
+*.zip
+work/
+index_backup.html
+iconos/
+imagenes/
+videos/
+web/
+*.lnk
+emma_landing.html
